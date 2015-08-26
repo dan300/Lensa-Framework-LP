@@ -1,0 +1,80 @@
+{% block commonhead %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Lensa</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link href='/static/css/dist/jquery.bxslider.css' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/popup.css" type="text/css">
+    <script src="{{ url_for('static', filename='js/dist/jquery-1.10.2.min.js') }}" type="text/javascript"></script>
+    <script src="/static/js/dist/jquery.bxslider.min.js" type="text/javascript"></script>
+    <script src="/static/js/dist/jquery.inview.min.js" type="text/javascript"></script>
+    <script src="/static/js/dist/magnific.min.js" type="text/javascript"></script>
+    <script src="/static/js/dist/cookie.js" type="text/javascript"></script>
+    <script src="/static/js/site.js" type="text/javascript"></script>
+</head>
+<body class="gradient-bg">
+{% endblock %}
+
+{% block header %}
+    <header class="w960" id="header">
+        <a href="" id="logo" class="anim-left"><img src="/static/images/logo.png" alt="" /></a>
+        <!-- <div id="slogan" class="anim-left">Competency framework</div> -->
+        <nav>
+            <ul id="menu" class="anim-right">
+                <li {% block features_active %}{% endblock %}><a href="{{ url_for('features') }}">The Model</a></li>
+                <li {% block whitelabel_active %}{% endblock %}><a href="{{ url_for('whitelabel') }}">V</a></li>
+            </ul>
+        </nav>
+    </header>
+{% endblock %}
+
+<div id="lensa-popup" class="white-popup mfp-hide">
+    <h1>STAY TUNED FOR THE LAUNCH OF THE NEW LENSA HIRING PLATFORM!</h1>
+    <h2>Features that make Lensa the next generation of human capital management…</h2>
+    <table>
+        <tr>
+            <td class="left-td">POOL</td>
+            <td class="right-td"><small>(candidate sharing)</small></td>
+        </tr>
+        <tr>
+            <td class="left-td">SCORE</td>
+            <td class="right-td"><small>(unique scoring on proving recruitment metrics)</small></td>
+        </tr>
+        <tr>
+            <td class="left-td">TEAM</td>
+            <td class="right-td"><small>(gamification to ensure organizational fit)</small></td>
+        </tr>
+    </table>
+</div>
+
+{% block content %}
+    <img src="http://placekitten.com/640/480" alt="Lord Content Kitten" />
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, doloremque, tempora, rem, est veniam tempore nesciunt sint modi pariatur sapiente quae animi eaque. Consequuntur, laboriosam, debitis consequatur dicta laborum accusantium.</p>
+{% endblock %}
+
+{% block contact %}
+    {% include "partials/contact_form.html" %}
+{% endblock %}
+
+{% block footer %}
+    <footer>
+        <div class="w960 anim-fade">
+            &copy; 2013 <img src="/static/images/logo.footer.png" alt="Lensa" /> all rights reserved
+        </div>
+    </footer>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46055466-1', 'lensa.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+{% endblock %}

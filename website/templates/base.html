@@ -21,10 +21,10 @@
 
 {% block header %}
     <header class="w960" id="header">
-        <a href="" id="logo" class="anim-left"><img src="/static/images/logo.png" alt="" /></a>
+        <a href="" id="logo" class=""><img src="/static/images/logo.png" alt="" /></a>
         <!-- <div id="slogan" class="anim-left">Competency framework</div> -->
         <nav>
-            <ul id="menu" class="anim-right">
+            <ul id="menu" class="">
                 <li {% block features_active %}{% endblock %}><a href="{{ url_for('features') }}">The Model</a></li>
                 <li {% block whitelabel_active %}{% endblock %}><a href="{{ url_for('whitelabel') }}">V</a></li>
             </ul>
